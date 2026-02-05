@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список записей</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Место</th>
+            <th>Оборудование</th>
+            <th>Детали</th>
+            <th>Уникальный ключ</th>
+            <th>Описание</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.place }}</td>
+            <td>{{ record.equipment }}</td>
+            <td>{{ record.part }}</td>
+            <td>{{ record.key }}</td>
+            <td>{{ record.description }}</td>
+            <td><a href="/edit/{{ record.id }}">Изменить</a></td>
+            <td><a href="/delete/{{ record.id }}">Удалить</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

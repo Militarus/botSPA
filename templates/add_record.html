@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление записи</title>
+</head>
+<body>
+    <form method="post">
+        Место:
+        <select name="place">
+            <!-- Варианты значений -->
+            <option value="Общий">Общий</option>
+            <option value="Цех розлива">Цех розлива</option>
+            <option value="Аппаратный цех">Аппаратный цех</option>
+            <option value="Цех УПиС">Цех УПиС</option>
+            <option value="Творожный цех">Творожный цех</option>
+            <option value="Маслоцех">Маслоцех</option>
+            <option value="6 отметка">6 отметка</option>
+            <option value="Компрессорный цех">Компрессорный цех</option>
+            <option value="Цех мороженого">Цех мороженого</option>
+            <option value="Котельная">Котельная</option>
+            <option value="Цех мороженого">Цех мороженого</option>
+            <option value="Лаборатория">Лаборатория</option>
+        </select><br>
+
+        Оборудование: <input type="text" name="equipment"><br>
+        Детали: <input type="text" name="part"><br>
+        Уникальный ключ: <input type="text" name="key"><br>
+        Описание: <textarea name="description"></textarea><br>
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>

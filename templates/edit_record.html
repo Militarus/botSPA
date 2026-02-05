@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование записи</title>
+</head>
+<body>
+    <form method="post">
+        Место:
+        <select name="place">
+            <<option value="Общий"{% if record.place == 'Общий' %} selected{% endif %}>Общий</option>
+            <<option value="Цех розлива"{% if record.place == 'Цех розлива' %} selected{% endif %}>Цех розлива</option>
+            <<option value="Аппаратный цех"{% if record.place == 'Аппаратный цех' %} selected{% endif %}>Аппаратный цех</option>
+            <<option value="Цех УПиС"{% if record.place == 'Цех УПиС' %} selected{% endif %}>Цех УПиС</option>
+            <<option value="Творожный цех"{% if record.place == 'Творожный цех' %} selected{% endif %}>Творожный цех</option>
+            <<option value="Маслоцех"{% if record.place == 'Маслоцех' %} selected{% endif %}>Маслоцех</option>
+            <<option value="6 отметка"{% if record.place == '6 отметка' %} selected{% endif %}>6 отметка</option>
+            <<option value="Компрессорный цех"{% if record.place == 'Компрессорный цех' %} selected{% endif %}>Компрессорный цех</option>
+            <<option value="Котельная"{% if record.place == 'Котельная' %} selected{% endif %}>Котельная</option>
+            <<option value="Цех мороженого"{% if record.place == 'Цех мороженого' %} selected{% endif %}>Цех мороженого</option>
+            <<option value="Лаборатория"{% if record.place == 'Лаборатория' %} selected{% endif %}>Лаборатория</option>
+        </select><br>
+
+        Оборудование: <input type="text" name="equipment" value="{{ record.equipment }}"><br>
+        Детали: <input type="text" name="part" value="{{ record.part }}"><br>
+        Уникальный ключ: <input type="text" name="key" value="{{ record.key }}"><br>
+        Описание: <textarea name="description">{{ record.description }}</textarea><br>
+        <button type="submit">Обновить</button>
+    </form>
+</body>
+</html>
