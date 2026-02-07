@@ -1,14 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Добавление записи</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление записи оборудования</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            width: 30%;
+            max-width: 400px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        select,
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <form method="post">
-        Место:
-        <select name="place">
-            <!-- Варианты значений -->
+        <label for="place">Место:</label>
+        <select id="place" name="place">
             <option value="Общий">Общий</option>
             <option value="Цех розлива">Цех розлива</option>
             <option value="Аппаратный цех">Аппаратный цех</option>
@@ -19,14 +70,21 @@
             <option value="Компрессорный цех">Компрессорный цех</option>
             <option value="Цех мороженого">Цех мороженого</option>
             <option value="Котельная">Котельная</option>
-            <option value="Цех мороженого">Цех мороженого</option>
             <option value="Лаборатория">Лаборатория</option>
         </select><br>
 
-        Оборудование: <input type="text" name="equipment"><br>
-        Детали: <input type="text" name="part"><br>
-        Уникальный ключ: <input type="text" name="key"><br>
-        Описание: <textarea name="description"></textarea><br>
+        <label for="equipment">Оборудование:</label>
+        <input type="text" id="equipment" name="equipment"><br>
+
+        <label for="part">Детали:</label>
+        <input type="text" id="part" name="part"><br>
+
+        <label for="key">Уникальный ключ:</label>
+        <input type="text" id="key" name="key"><br>
+
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description"></textarea><br>
+
         <button type="submit">Добавить</button>
     </form>
 </body>

@@ -1,31 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Список записей</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список записей оборудования</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        table {
+            width: 90%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        /* Ограничиваем число строк */
+        td.description-cell {
+            line-clamp: 3; /* Показываем максимум 3 строки */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <table border="1">
-        <tr>
-            <th>Место</th>
-            <th>Оборудование</th>
-            <th>Детали</th>
-            <th>Уникальный ключ</th>
-            <th>Описание</th>
-            <th></th>
-            <th></th>
-        </tr>
-        {% for record in records %}
-        <tr>
-            <td>{{ record.place }}</td>
-            <td>{{ record.equipment }}</td>
-            <td>{{ record.part }}</td>
-            <td>{{ record.key }}</td>
-            <td>{{ record.description }}</td>
-            <td><a href="/edit/{{ record.id }}">Изменить</a></td>
-            <td><a href="/delete/{{ record.id }}">Удалить</a></td>
-        </tr>
-        {% endfor %}
+    <table>
+        <thead>
+            <tr>
+                <th>Место</th>
+                <th>Оборудование</th>
+                <th>Детали</th>
+                <th>Уникальный ключ</th>
+                <th>Описание</th>
+                <th colspan="2">Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record.place }}</td>
+                <td>{{ record.equipment }}</td>
+                <td>{{ record.part }}</td>
+                <td>{{ record.key }}</td>
+                <td class="description-cell">{{ record.description }}</td>
+                <td><a href="/edit/{{ record.id }}">Изменить</a></td>
+                <td><a href="/delete/{{ record.id }}">Удалить</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
 </body>
 </html>
