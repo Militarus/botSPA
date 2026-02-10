@@ -34,7 +34,7 @@
         select,
         input[type="text"],
         textarea {
-            width: 100%;
+            width: 95%;
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
@@ -60,11 +60,17 @@
     <form method="post">
         <label for="place">Место:</label>
         <select id="place" name="place">
-            {% for place in places %}
-                <option value="{{ place }}" {% if record.place == place %}selected{% endif %}>
-                    {{ place }}
-                </option>
-            {% endfor %}
+            <option value="Общий">Общий</option>
+            <option value="Цех розлива">Цех розлива</option>
+            <option value="Аппаратный цех">Аппаратный цех</option>
+            <option value="Цех УПиС">Цех УПиС</option>
+            <option value="Творожный цех">Творожный цех</option>
+            <option value="Маслоцех">Маслоцех</option>
+            <option value="6 отметка">6 отметка</option>
+            <option value="Компрессорный цех">Компрессорный цех</option>
+            <option value="Цех мороженого">Цех мороженого</option>
+            <option value="Котельная">Котельная</option>
+            <option value="Лаборатория">Лаборатория</option>
         </select><br>
 
         <label for="equipment">Оборудование:</label>
